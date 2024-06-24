@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // nav logo color change
-lg = document.getElementById("logo");
+// lg = document.getElementById("logo");
 list =  Array.prototype.slice.call(document.getElementsByClassName("link"));
 nvbar =  Array.prototype.slice.call(document.getElementsByClassName("nvbar"));
 
@@ -31,7 +31,7 @@ window.addEventListener('scroll', () => {
   
     // Check if the scroll position is within the defined color change points
     if (scrollPosition >= 170 ) {
-      lg.classList.add('lg');
+      // lg.classList.add('lg');
       list.forEach(function (item) {
         item.classList.add("clr");
     });
@@ -40,7 +40,7 @@ window.addEventListener('scroll', () => {
     });
       
     }else{
-      lg.classList.remove('lg');
+      // lg.classList.remove('lg');
       list.forEach(function (item) {
         item.classList.remove("clr");
     });
@@ -97,3 +97,30 @@ function changeLogoText() {
 }
 
 window.addEventListener("resize", changeLogoText);
+
+
+// Portfolio nav
+
+function showDiv(divId) {
+  // Get all div elements with class 'content'
+  const divs = document.querySelectorAll('.portfolio-row');
+  // Hide all divs
+  divs.forEach(div => div.style.display = 'none');
+  // Show the specific div
+  document.getElementById(divId).style.display = 'flex';
+}
+
+// Add event listeners to buttons
+document.getElementById('b_ml').addEventListener('click', () => showDiv('ml'));
+document.getElementById('b_wd').addEventListener('click', () => showDiv('wd'));
+document.getElementById('b_ad').addEventListener('click', () => showDiv('ad'));
+document.getElementById('b_apd').addEventListener('click', () => showDiv('apd'));
+
+cards = document.querySelectorAll('.responsive-container-block .card')
+cards.forEach(div => 
+
+  div.addEventListener('mouseover',function(){
+    div.classList.add("w3-animate-oppacity")
+  })
+
+);
